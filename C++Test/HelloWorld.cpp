@@ -39,7 +39,9 @@ int main()
 
 	int number6 = 0x6;
 	int number = ~number6;
-	cout << "This is 6, right? " << number; //outputs -7
+	cout << "This is 6, right? " << number << endl; //outputs -7
+	number = 2 | number6;
+	cout << "2 or 6 Equals to: " << number << endl;
 
 	return 0;
 
