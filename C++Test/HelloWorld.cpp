@@ -45,9 +45,9 @@ int main()
 	int number = ~number6;
 	cout << "This is 6, right? " << number << endl; //outputs -7
 	number = 2 | number6;
-	cout << "2 or 6 Equals to: " << number << endl; //outputs <todo>
+	cout << "2 or 6 Equals to: " << number << endl; //outputs 6 
 	number = 2 ^ number6;
-	cout << "2 xor 6 Equals to: " << number << endl;
+	cout << "2 xor 6 Equals to: " << number << endl; //outputs 4
 
 	return 0;
 
