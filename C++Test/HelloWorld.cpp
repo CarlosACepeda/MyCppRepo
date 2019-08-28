@@ -11,12 +11,16 @@ int main()
 
 	for (int i = 0; i < 9; i++)
 	{
-		cout << i;
+		cout << i << "Pollito" <<endl;
 	};
-
 	int x = 1;
-	cout << x++; //Outputs 1;
-	cout << ++x; //Outputs 3;
+
+	cout << "X equals now to: " << x << endl;
+	cout << "x++: "<< x++ << endl; //Outputs 1, the reason is that it first grabs the value, then it does the operation.
+	cout << "X equals now to: " << x << endl;
+	cout << "++x: " << ++x << endl; //Outputs 3; //it makes the operation first then it returns the value.
+	cout << "X equals now to: " << x << endl;
+
 
 	cin >> result;
 
@@ -41,9 +45,10 @@ int main()
 	int number = ~number6;
 	cout << "This is 6, right? " << number << endl; //outputs -7
 	number = 2 | number6;
-	cout << "2 or 6 Equals to: " << number << endl;
+	cout << "2 or 6 Equals to: " << number << endl; //outputs <todo>
+	number = 2 ^ number6;
+	cout << "2 xor 6 Equals to: " << number << endl;
 
 	return 0;
 
-	//DEFINE ALL the OTHER OPERATIONS. TODO
 }
