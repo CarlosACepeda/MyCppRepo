@@ -49,6 +49,20 @@ int main()
 	number = 2 ^ number6;
 	cout << "2 xor 6 Equals to: " << number << endl; //outputs 4
 
+	//For Demo.
+		// input the loop count
+	int nLoopCount;    cout << "Enter loop count: ";    cin  >> nLoopCount;    // count up to the loop count limit    
+	for (int i = 1; i <= nLoopCount; i++)    
+	{        
+		cout << "We've finished " << i 
+			<< " loops" << endl;   
+	}    
+	// wait until user is ready before terminating program    		
+	// to allow the user to see the program results    
+	cout << "Press Enter to continue..." << endl;    
+	cin.ignore(10, '\n');    
+	cin.get(); 
+
 	return 0;
 
 }
