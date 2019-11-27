@@ -37,8 +37,8 @@ int main()
 
 	//Bitwise operators:
 	//~ :NOT, toggles the bit from 1 to 0 and 0 to 1.
-	//& :AND each bit of the left - hand argument with that on the right 
-	//| :OR each bit of the left - hand argument with that on the right 
+	//& :AND each bit of the left-hand argument with that on the right 
+	//| :OR each bit of the left-hand argument with that on the right 
 	//^ :XOR(exclusive OR) each bit of the left - hand argument with that on the right
 
 	int number6 = 0x6;
@@ -48,6 +48,7 @@ int main()
 	cout << "2 or 6 Equals to: " << number << endl; //outputs 6 
 	number = 2 ^ number6;
 	cout << "2 xor 6 Equals to: " << number << endl; //outputs 4
+
 
 	return 0;
 
