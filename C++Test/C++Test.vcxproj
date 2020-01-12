@@ -28,7 +28,7 @@
     <VCProjectVersion>16.0</VCProjectVersion>
     <ProjectGuid>{10A3CC46-4B8F-4FA8-9705-9F9CDFDC8C01}</ProjectGuid>
     <RootNamespace>CTest</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
