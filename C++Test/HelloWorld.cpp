@@ -24,6 +24,9 @@ int main()
 
 	cin >> result;
 
+	cout << "The size of result is " << sizeof(result)
+		<< " and the size of X is " << sizeof(x) << endl;
+
 	//Ancient inherited from C octal system:
 	//by default c++ interprets numbers starting with 0 as octals.
 
@@ -51,16 +54,17 @@ int main()
 
 	//For Demo.
 		// input the loop count
-	int nLoopCount;    cout << "Enter loop count: ";    cin  >> nLoopCount;    // count up to the loop count limit    
+	int nLoopCount;    cout << "Enter loop count: ";
+	cin  >> nLoopCount;    // count up to the loop count limit
 	for (int i = 1; i <= nLoopCount; i++)    
 	{        
 		cout << "We've finished " << i 
 			<< " loops" << endl;   
 	}    
-	// wait until user is ready before terminating program    		
+	// wait until user is ready before terminating program
 	// to allow the user to see the program results    
-	cout << "Press Enter to continue..." << endl;    
-	cin.ignore(10, '\n');    
+	cout << "Press Enter to continue..." << endl;
+	cin.ignore();
 	cin.get(); 
 
 	return 0;
