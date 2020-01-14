@@ -1,6 +1,8 @@
 //Punto de entrada para la aplicación.
 
 #include <iostream>
+#include <limits.h> //C header.
+
 using namespace std;
 
 int main()
@@ -8,6 +10,13 @@ int main()
 	string result;
 	cout << "Hello World";
 	cin >> result;
+
+
+	//Limits:
+	INT_MAX;
+	INT_MIN;
+	//etc...
+
 
 	for (int i = 0; i < 9; i++)
 	{
