@@ -20,7 +20,7 @@ int main()
 	int x = 1;
 
 	cout << "X equals now to: " << x << endl;
-	cout << "x++: "<< x++ << endl; //Outputs 1, the reason is that it first grabs the value, then it does the operation.
+	cout << "x++: " << x++ << endl; //Outputs 1, the reason is that it first grabs the value, then it does the operation.
 	cout << "X equals now to: " << x << endl;
 	cout << "++x: " << ++x << endl; //Outputs 3; //it makes the operation first then it returns the value.
 	cout << "X equals now to: " << x << endl;
@@ -61,12 +61,12 @@ int main()
 		// input the loop count
 	cout << "For Demo:" << endl;
 	int nLoopCount;    cout << "Enter loop count: ";
-	cin  >> nLoopCount;    // count up to the loop count limit
-	for (int i = 1; i <= nLoopCount; i++)    
-	{        
-		cout << "We've finished " << i 
-			<< " loops" << endl;   
-	}    
+	cin >> nLoopCount;    // count up to the loop count limit
+	for (int i = 1; i <= nLoopCount; i++)
+	{
+		cout << "We've finished " << i
+			<< " loops" << endl;
+	}
 
 	//Arrays. (array type of float)
 	//Foreach tipe there's an array.
@@ -77,7 +77,7 @@ int main()
 	cout << "Do you wish to see a While loop demo that crashes the program?, If you do, press 'y' otherwise press 'n'" << endl;
 	cin >> crashOption;
 
-	if (crashOption== "y")
+	if (crashOption == "y")
 	{
 		auto index = 0;
 		cout << "While Demo:" << endl;
@@ -125,16 +125,16 @@ int main()
 	productPrices[1] = 105.6f;
 	productPrices[2] = 402.7f;
 	productPrices[3] = 105.5f;
-	
+
 
 	cout << "Welcome, Mr. Client, how much money do you have?: " << endl;
 	cin >> clientMoney;
 
 	if (clientMoney > 0)
 	{
-		while (userHasFinishedBuying==false)
-		{			
-			if(userhasMoneyToPay)
+		while (userHasFinishedBuying == false)
+		{
+			if (userhasMoneyToPay)
 			{
 				cout << "Products" << endl;
 				cout << "1." << productsNames[0] << " price: " << productPrices[0] << endl;
@@ -186,7 +186,7 @@ int main()
 				//The while loop executes forever, the debugger just skips this, to see this happening, remove the line
 				//175: "(userHasFinishedBuying = true; //she does not have more money to buy things.)".
 				cout << "You don't have more money left or you canceled the buy, thanks for coming" << endl;
-				
+
 			}
 		}
 		cout << "Thanks for buying, now you have " << clientMoney << " left!" << endl;
@@ -196,6 +196,24 @@ int main()
 		cout << "Who are you trying to fool?" << endl;
 	}
 
+
+	//Numeric Limits, we're gonna using the limits header.
+	cout << "Numeric Limits" << endl;
+	cout << "Int: " << endl;
+	cout << "Minimum " <<numeric_limits<int>::min() << endl;
+	cout << "Maximum " <<numeric_limits<int>::max() << endl;
+	
+	cout << "Int (unsigned): " << endl;
+	cout << "Minimum " <<numeric_limits<unsigned int>::min() << endl;
+	cout << "Maximum " <<numeric_limits<unsigned int>::max() << endl;
+
+	cout << "Int: " << endl;
+	cout << "Minimum " << (int)numeric_limits<char>::min() << endl;
+	cout << "Maximum " << (int)numeric_limits<char>::max() << endl;
+
+	cout << "Char (unsigned): " << endl;
+	cout << "Minimum " << (int)numeric_limits<unsigned char>::min() << endl;
+	cout << "Maximum " << (int)numeric_limits<unsigned char>::max() << endl;
 
 	// wait until user is ready before terminating program
 	// to allow the user to see the program results    
