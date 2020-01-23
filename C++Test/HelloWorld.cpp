@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <limits.h> //C header.
+#include <string> 
 
 using namespace std;
 
@@ -214,6 +215,16 @@ int main()
 	cout << "Char (unsigned): " << endl;
 	cout << "Minimum " << (int)numeric_limits<unsigned char>::min() << endl;
 	cout << "Maximum " << (int)numeric_limits<unsigned char>::max() << endl;
+
+
+	cout << "now testing String" << endl;
+	string yourName;
+
+	cout << "Enter your name" << endl;
+	cin.ignore();
+	getline(cin, yourName); // It gets the input from cin and stuffs yourName with its contents.
+
+	cout << "Your name is: " << yourName << endl;
 
 	// wait until user is ready before terminating program
 	// to allow the user to see the program results    
