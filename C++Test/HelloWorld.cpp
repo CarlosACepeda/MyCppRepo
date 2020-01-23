@@ -266,6 +266,14 @@ int main()
 	ss2 >> ageInt;
 	cout << "you're " << (ageInt+ 1) << " in a year!" << endl;
 	
+	//Foreach (kind of(?))
+	cout << "For each demo: " << endl;
+	int arr[] = { 1,2,3,4 };
+	for (int item : arr)
+	{
+		cout << "Item foreach: " << item << endl;
+	};
+
 
 	// wait until user is ready before terminating program
 	// to allow the user to see the program results    
