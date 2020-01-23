@@ -64,7 +64,7 @@ int main()
 	cout << "For Demo:" << endl;
 	int nLoopCount;    cout << "Enter loop count: ";
 	cin >> nLoopCount;    // count up to the loop count limit
-	for (int i = 1; i <= nLoopCount; i++)
+	for (int i = 1; i <= nLoopCount; i++ /*This action always happens at the end of each loop*/)
 	{
 		cout << "We've finished " << i
 			<< " loops" << endl;
