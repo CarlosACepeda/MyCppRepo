@@ -3,6 +3,7 @@
 #include <iostream>
 #include <limits.h> //C header.
 #include <string> 
+#include <sstream> //Allows several operations with strings.
 
 using namespace std;
 
@@ -174,7 +175,6 @@ int main()
 					else
 					{
 						userhasMoneyToPay = false;
-						userHasFinishedBuying = true; //she does not have more money to buy things.
 						cout << "Come back when you have more money, those pennies won't afford our luxuries" << endl;
 					}
 				}
@@ -183,9 +183,7 @@ int main()
 			{
 				//automatically we say that the user has finished buying because she finished it or
 				//she doesn't have money to pay anyway, lol.
-				userHasFinishedBuying == true; //(For some reason this assignment isn't working LOL.
-				//The while loop executes forever, the debugger just skips this, to see this happening, remove the line
-				//175: "(userHasFinishedBuying = true; //she does not have more money to buy things.)".
+				userHasFinishedBuying = true;
 				cout << "You don't have more money left or you canceled the buy, thanks for coming" << endl;
 
 			}
@@ -225,6 +223,49 @@ int main()
 	getline(cin, yourName); // It gets the input from cin and stuffs yourName with its contents.
 
 	cout << "Your name is: " << yourName << endl;
+
+	//Demo string with ASCII
+	//Now here I show that concatenating strings with integers will cause 'cout' to (in the case of the integers)
+	//output the ASCII code for that int, example, 49 equals to 1 in ASCII.
+	//In order to do those concats we use a header called sstream (or stringstream) which will help us to print the intended 
+	//Values when concatenating.
+	//In this example I will ask the age and the name, and concatenate them to form a message.
+	//One will output the wrong value for the age (1) (in the case I enter 49) 
+	//and the other will output the correct value, 49, by using the stringstream class in the sstream header before using cout.
+
+	int age;
+	string name;
+	cout << "Enter your age: ";
+	cin >> age;
+
+	cout << "Enter your name: ";
+	cin >> name;
+
+	string output = name + " - you are  ";
+	output += age;
+	output += " years old";
+
+	cout << "The result with 'cout' is : " << endl;
+	cout << output << endl; //This is the version for cout, will print the Age number in its ASCII equivalent, test 49 and it'll show 1.
+
+	stringstream ss;
+
+	ss << name << " - you are " << age << " years old!";
+	output = ss.str(); //This will cause 'age' to be formatted correctly.
+
+	cout << "The result with 'ss' from sstream is : " << endl;
+	cout << output << endl; //This is the version with 'age' formatted.
+
+	//stringstream allows us to convert from string to int.
+
+	stringstream ss2;
+
+	string agestring = "42";
+	int ageInt;
+	ss2 << agestring;
+	ss2 >> ageInt;
+	cout << "you're " << (ageInt+ 1) << " in a year!" << endl;
+	
 
 	// wait until user is ready before terminating program
 	// to allow the user to see the program results    
