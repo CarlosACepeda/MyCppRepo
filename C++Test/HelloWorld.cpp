@@ -71,7 +71,7 @@ int main()
 	}
 
 	//Arrays. (array type of float)
-	//Foreach tipe there's an array.
+	//Foreach type there's an array.
 	//e.g. int myArray[3]; 
 	float productPrices[4];
 
@@ -111,22 +111,70 @@ int main()
 	variables.
 	*/
 
+	//Homework 2:
+	//Modify this Vending machine program so the user can insert the 4 products along with its prices,
+	//and the products must be shown in ascending order of price.
+	//The rest of the program will continue normally.
+
 	float clientMoney = 0;
 	string userchoice;
 	bool userHasFinishedBuying = false;
 	int userchosenProduct = -1;
 	bool userhasMoneyToPay = true;
 
+
+	//(For the homework 2 I've to comment this out because the user is the one who will insert the prices
+	//and the names of the products)
+
 	string productsNames[4];
-	productsNames[0] = "Paper Aircraft";
+	/*productsNames[0] = "Paper Aircraft";
 	productsNames[1] = "Paper Boat";
 	productsNames[2] = "Paper Rocket";
-	productsNames[3] = "Paper Super Fast Car";
+	productsNames[3] = "Paper Super Fast Car";*/
 
-	productPrices[0] = 200.5f;
+	/*productPrices[0] = 200.5f;
 	productPrices[1] = 105.6f;
 	productPrices[2] = 402.7f;
-	productPrices[3] = 105.5f;
+	productPrices[3] = 105.5f;*/
+
+	string tempProductName;
+	float tempProductPrice=0;
+
+	cout << "Hi there! The vending machine is empty, would you like to insert the products "<< endl;
+	cout << "that you will buy? LOL, yes that sounds dumb, but you must abide..." << endl;
+	cin.ignore();
+	for (int i = 0; i < sizeof(productPrices)/4; i++)
+	{
+		cout << "Insert the name of the " << i + 1 << " product" << endl;
+		//cin.ignore();
+		getline(cin, productsNames[i]);
+		//cin >> productsNames[i];
+		cout << "Now insert the price of that product" << endl;
+		cin >> productPrices[i];
+		cin.ignore();
+	}
+	//now lets arrange the products by the price in ascending order
+	//we will use bubble sort.
+	int counter = 0;
+	for (counter = 0; counter < sizeof(productPrices)/4; counter++)
+	{	
+		//cout << sizeof(productPrices) / 4 << endl;
+		if(counter+1< sizeof(productPrices)/4) //If counter + 1 is greater than 3 it'll crash...		
+		if (productPrices[counter] > productPrices[counter + 1])
+		{
+			//Let's perform a swap.
+			auto tempPrice = productPrices[counter + 1];
+			auto tempName = productsNames[counter + 1];
+			productPrices[counter + 1] = productPrices[counter];
+			productPrices[counter] = tempPrice;
+
+			productsNames[counter + 1] = productsNames[counter];
+			productsNames[counter] = tempName;
+			counter =- 1;
+			continue;
+		}
+		continue;
+	}
 
 
 	cout << "Welcome, Mr. Client, how much money do you have?: " << endl;
