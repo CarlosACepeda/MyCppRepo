@@ -7,8 +7,15 @@
 
 using namespace std;
 
+void DummyFunction(); //If you remove this and/or the following two method prototypes, it won't compile (Method prototyping) 
+string GetString(string);
+string GetString(string *);
+void IDontExist(); //It won't compile, the Linker won't find this Function when called.
+
 int main()
 {
+	DummyFunction();
+	//IDontExist(); //It won't compile, the Linker won't find this Function.
 	string result;
 	cout << "Hello World" << endl;
 
@@ -323,12 +330,79 @@ int main()
 	};
 
 
+	//Function example:
+
+	string firstName = GetString("Enter your first name"); // <-- <Name>, method, ("Argument"), and the argument can be whatever, c++ compiler lets us to do that.
+	//c++ compiler will try to do its best to parse the argument passed to that method in particular.
+
+	string lastName = GetString("Enter your last name");
+
+	cout << "Your name is: " << firstName << lastName;
+
+	cin.ignore();
+	cin.get();
+
+	//Passing an array as an argument for the function GetString, that also accepts arrays
+	string namez[4];
+	namez[0] = "One";
+	namez[0] = "Two";
+	namez[0] = "Three";
+	namez[0] = "Four";
+
+
+	GetString(namez);
+
 	// wait until user is ready before terminating program
-	// to allow the user to see the program results    
+	// to allow the user to see the program results
 	cout << "Press Enter to continue..." << endl;
 	cin.ignore();
-	cin.get(); 
+	cin.get();
 
 	return 0;
+}
+
+string GetString(string prompt) // "string" return type. "<Name>" identifier, "(<type> parameter)": input data, same as C#
+//also we can have Overloads as in C# too. The compiler will decide at compile time which overload is the best to use, depending on the argument being passed.
+{
+	cout << prompt << ": ";
+	string temp;
+	getline(cin, temp);
+	return temp;
 
 }
+string GetString(string names[4])
+{
+	cout << names[0] << " " << names[1] << " " << names[2] << " " << names[3] << endl; 
+	//pst, we can use a for loop for seeing out all the names within the array.
+	return "not important";
+}
+void DummyFunction()
+{
+	bool thisIsTrue = 1 + 1;
+}
+//Aditional notes that doesn't necessarily mean I have to code them:
+	//1: The order of the functions matters, because c++ Compiler will analize line by line of the code file.
+	//So for example you have the following code:
+//int GetInt()
+//{
+//	return GetInt("test");
+//}
+///*...and:*/
+//int GetInt(string prompt)
+//{
+//	int temp = 0;
+//	cout << prompt << endl;
+//	cin >> temp;
+//	return temp;
+//	
+//}
+//It won't compile, because when the compiler parses 'return GetInt("test")' is hasn't parsed the actual method of GetInt(string prompt)
+//So basically for the compiler that method doesn't exist. (Unless I use Method Prototyping)
+
+//2: A method is attached to an object, such as cin.get();
+//and a function is a free standing one, such as the 'int main()' function.
+
+//Method prototyping: Basically telling the compiler that some method that should be called exists but we don't know where yet.
+//for example if inside int main() function I call 'DummyFunction()' but the compiler doesn't know what's that and It won't compile
+//and for solving that situation we'll use a Function Prototype (for declaring all before using as the C++ standard says..)
+//So, we'll write a function with the exact same signature as a declaration in the global scope, for example just after 'using namespace std;' statement
