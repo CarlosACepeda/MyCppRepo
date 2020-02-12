@@ -4,6 +4,8 @@
 #include <limits.h> //C header.
 #include <string> 
 #include <sstream> //Allows several operations with strings.
+#include "VendingMachine.h"
+
 
 using namespace std;
 
@@ -11,6 +13,7 @@ void DummyFunction(); //If you remove this and/or the following two method proto
 string GetString(string);
 string GetString(string *);
 void IDontExist(); //It won't compile, the Linker won't find this Function when called.
+//void VendingMachine(); //We can use this, or instead use a Header file(VendingMachine.h) by including it.
 
 int main()
 {
@@ -101,154 +104,11 @@ int main()
 		}
 	}
 
-	//Homework 1: The vending machine.
-	/*
-	Ask the user how much money do they have
-	There must be at least 4 products.
-	The user will select a product from the product list
-	The program will inform the user what item they purchased and how much money they have left.
-	The program will continue to execute until the user has no money or decides to exit.
+	//TODO: Homework 3: Refactor the VendingMachine program to use headers and multiple cpp files. (I already kind of done that xd)
+	//Line limit per function: 40 Lines including whitespaces and comments. (Including main) so I will move my other test stuff to other files
+	//To maintain main() clean.
 
-	Allowed to use:
-	while loops.
-	if statements.
-	cin/cout.
-	arrays.
-	any primitive datatype.
-	variables.
-	*/
-
-	//Homework 2:
-	//Modify this Vending machine program so the user can insert the 4 products along with its prices,
-	//and the products must be shown in ascending order of price.
-	//The rest of the program will continue normally.
-
-	float clientMoney = 0;
-	string userchoice;
-	bool userHasFinishedBuying = false;
-	int userchosenProduct = -1;
-	bool userhasMoneyToPay = true;
-
-
-	//(For the homework 2 I've to comment this out because the user is the one who will insert the prices
-	//and the names of the products)
-
-	string productsNames[4];
-	/*productsNames[0] = "Paper Aircraft";
-	productsNames[1] = "Paper Boat";
-	productsNames[2] = "Paper Rocket";
-	productsNames[3] = "Paper Super Fast Car";*/
-
-	/*productPrices[0] = 200.5f;
-	productPrices[1] = 105.6f;
-	productPrices[2] = 402.7f;
-	productPrices[3] = 105.5f;*/
-
-	string tempProductName;
-	float tempProductPrice=0;
-
-	cout << "Hi there! The vending machine is empty, would you like to insert the products "<< endl;
-	cout << "that you will buy? LOL, yes that sounds dumb, but you must abide..." << endl;
-	cin.ignore();
-	for (int i = 0; i < sizeof(productPrices)/4; i++)
-	{
-		cout << "Insert the name of the " << i + 1 << " product" << endl;
-		//cin.ignore();
-		getline(cin, productsNames[i]);
-		//cin >> productsNames[i];
-		cout << "Now insert the price of that product" << endl;
-		cin >> productPrices[i];
-		cin.ignore();
-	}
-	//now lets arrange the products by the price in ascending order
-	//we will use bubble sort.
-	int counter = 0;
-	for (counter = 0; counter < sizeof(productPrices)/4; counter++)
-	{	
-		//cout << sizeof(productPrices) / 4 << endl;
-		if(counter+1< sizeof(productPrices)/4) //If counter + 1 is greater than 3 it'll crash...		
-		if (productPrices[counter] > productPrices[counter + 1])
-		{
-			//Let's perform a swap.
-			auto tempPrice = productPrices[counter + 1];
-			auto tempName = productsNames[counter + 1];
-			productPrices[counter + 1] = productPrices[counter];
-			productPrices[counter] = tempPrice;
-
-			productsNames[counter + 1] = productsNames[counter];
-			productsNames[counter] = tempName;
-			counter =- 1;
-			continue;
-		}
-		continue;
-	}
-
-
-	cout << "Welcome, Mr. Client, how much money do you have?: " << endl;
-	cin >> clientMoney;
-
-	if (clientMoney > 0)
-	{
-		while (userHasFinishedBuying == false)
-		{
-			if (userhasMoneyToPay)
-			{
-				cout << "Products" << endl;
-				cout << "1." << productsNames[0] << " price: " << productPrices[0] << endl;
-				cout << "2." << productsNames[1] << " price: " << productPrices[1] << endl;
-				cout << "3." << productsNames[2] << " price: " << productPrices[2] << endl;
-				cout << "4." << productsNames[3] << " price: " << productPrices[3] << endl;
-
-				cout << "Please, enter the number of the product you'd wish to buy!" << endl;
-				cin >> userchosenProduct;
-
-				if (userchosenProduct != -1)
-				{
-					//let's check if the client has enough money to buy in the first place.
-					if (clientMoney > productPrices[userchosenProduct - 1])
-					{
-						userhasMoneyToPay = true;
-						clientMoney = clientMoney - productPrices[userchosenProduct - 1];
-						cout << "Okay Mr. Client, you bought " << productsNames[userchosenProduct - 1] << "!" << endl;
-
-						cout << "Your balance is now: " << clientMoney << endl;
-						cout << "Do you wish to buy another item? y/n" << endl;
-						cin >> userchoice;
-						if (userchoice == "y")
-						{
-							userHasFinishedBuying = false;
-						}
-						else if (userchoice == "n")
-						{
-							userHasFinishedBuying = true;
-						}
-						else
-						{
-							cout << "woah";
-						}
-					}
-					else
-					{
-						userhasMoneyToPay = false;
-						cout << "Come back when you have more money, those pennies won't afford our luxuries" << endl;
-					}
-				}
-			}
-			else
-			{
-				//automatically we say that the user has finished buying because she finished it or
-				//she doesn't have money to pay anyway, lol.
-				userHasFinishedBuying = true;
-				cout << "You don't have more money left or you canceled the buy, thanks for coming" << endl;
-
-			}
-		}
-		cout << "Thanks for buying, now you have " << clientMoney << " left!" << endl;
-	}
-	else
-	{
-		cout << "Who are you trying to fool?" << endl;
-	}
+	cac::VendingMachine(); //Or also 'using namespace cac;'
 
 
 	//Numeric Limits, we're gonna using the limits header.
@@ -332,22 +192,22 @@ int main()
 
 	//Function example:
 
+	cin.ignore(); //Clear the buffer first :/
+
 	string firstName = GetString("Enter your first name"); // <-- <Name>, method, ("Argument"), and the argument can be whatever, c++ compiler lets us to do that.
 	//c++ compiler will try to do its best to parse the argument passed to that method in particular.
 
 	string lastName = GetString("Enter your last name");
 
-	cout << "Your name is: " << firstName << lastName;
+	cout << "Your name is: " << firstName <<" " << lastName;
 
-	cin.ignore();
-	cin.get();
 
 	//Passing an array as an argument for the function GetString, that also accepts arrays
 	string namez[4];
 	namez[0] = "One";
-	namez[0] = "Two";
-	namez[0] = "Three";
-	namez[0] = "Four";
+	namez[1] = "Two";
+	namez[2] = "Three";
+	namez[3] = "Four";
 
 
 	GetString(namez);
@@ -364,7 +224,7 @@ int main()
 string GetString(string prompt) // "string" return type. "<Name>" identifier, "(<type> parameter)": input data, same as C#
 //also we can have Overloads as in C# too. The compiler will decide at compile time which overload is the best to use, depending on the argument being passed.
 {
-	cout << prompt << ": ";
+	cout << prompt << ": " << endl;
 	string temp;
 	getline(cin, temp);
 	return temp;
@@ -402,7 +262,8 @@ void DummyFunction()
 //2: A method is attached to an object, such as cin.get();
 //and a function is a free standing one, such as the 'int main()' function.
 
-//Method prototyping: Basically telling the compiler that some method that should be called exists but we don't know where yet.
+//Method prototyping: Basically telling the compiler that some method/function that should be called exists but we don't know where yet.
 //for example if inside int main() function I call 'DummyFunction()' but the compiler doesn't know what's that and It won't compile
 //and for solving that situation we'll use a Function Prototype (for declaring all before using as the C++ standard says..)
 //So, we'll write a function with the exact same signature as a declaration in the global scope, for example just after 'using namespace std;' statement
+//For prototyping declared global fields then we use the Keyword 'extern' to forward declare them, same as with functions
