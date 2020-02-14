@@ -15,15 +15,21 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="VendingMachine.cpp">
+    <ClCompile Include="HelloWorld.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="HelloWorld.cpp">
+    <ClCompile Include="VendingMachineTest.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="VendingMachine.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="HelloWorld.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="VendingMachineTest.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="VendingMachine.h">

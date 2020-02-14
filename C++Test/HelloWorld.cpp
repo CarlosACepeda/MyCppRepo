@@ -4,6 +4,7 @@
 #include <limits.h> //C header.
 #include <string> 
 #include <sstream> //Allows several operations with strings.
+#include "VendingMachineTest.h"
 #include "VendingMachine.h"
 
 
@@ -21,6 +22,19 @@ int main()
 	//IDontExist(); //It won't compile, the Linker won't find this Function.
 	string result;
 	cout << "Hello World" << endl;
+
+	//Homework 3:
+	//Refactor the vending machine program so it uses Headers, functions, namespaces,
+	//In order to have a cleaner program,
+	//Max line limit for functions including comments and whitespaces:40.
+	//Solution:
+	//(files created for the homework)
+	//VendingMachine.cpp
+	//VendingMachine.h
+
+	vndm::DisplayWelcomeMessage();
+	vndm::InsertProducts();
+	vndm::PromptProducts();
 
 	//Limits:
 	INT_MAX;
@@ -108,7 +122,7 @@ int main()
 	//Line limit per function: 40 Lines including whitespaces and comments. (Including main) so I will move my other test stuff to other files
 	//To maintain main() clean.
 
-	cac::VendingMachine(); //Or also 'using namespace cac;'
+	//cac::VendingMachine(); //Or also 'using namespace cac;'
 
 
 	//Numeric Limits, we're gonna using the limits header.
