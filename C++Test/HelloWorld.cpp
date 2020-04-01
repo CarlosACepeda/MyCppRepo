@@ -16,6 +16,19 @@ string GetString(string *);
 void IDontExist(); //It won't compile, the Linker won't find this Function when called.
 //void VendingMachine(); //We can use this, or instead use a Header file(VendingMachine.h) by including it.
 
+
+enum DaysOfTheWeek
+{
+	Sunday,
+	Monday,
+	Tuesday,
+	Wednesday,
+	Thursday,
+	Friday,
+	Saturday
+} defaultDay = Monday;
+
+
 int main()
 {
 	DummyFunction();
