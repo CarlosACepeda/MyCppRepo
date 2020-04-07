@@ -80,17 +80,5 @@ int main()
 		PrintProduct(products2[i]);
 	}
 
-	//Homework 4: 
-	//Continue the vending machine and use structs and vectors instead 
-	//of arrays.
-	//use a menu using Enums with the following points:
-	/*
-	Add new Product.
-	Sort Products.
-	Display Products.
-	Exit
-	TODO
-	*/
-
 	return 0;
 }
