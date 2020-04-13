@@ -11,7 +11,9 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "InputOutputFile", "InputOut
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "VendingMachineHomework4", "VendingMachineHomework4\VendingMachineHomework4.vcxproj", "{29BFC576-A0BB-4705-A189-B2A46C994BC5}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Pointers", "Pointers\Pointers.vcxproj", "{A8B5DD79-2385-4CA4-A5A8-A975349F63CA}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PointersAndCustomResizeableArrays", "Pointers\Pointers.vcxproj", "{A8B5DD79-2385-4CA4-A5A8-A975349F63CA}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LinkedLists", "LinkedLists\LinkedLists.vcxproj", "{A13C17B6-E893-4AFC-8B9D-B957A5C8FE39}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -61,6 +63,14 @@ Global
 		{A8B5DD79-2385-4CA4-A5A8-A975349F63CA}.Release|x64.Build.0 = Release|x64
 		{A8B5DD79-2385-4CA4-A5A8-A975349F63CA}.Release|x86.ActiveCfg = Release|Win32
 		{A8B5DD79-2385-4CA4-A5A8-A975349F63CA}.Release|x86.Build.0 = Release|Win32
+		{A13C17B6-E893-4AFC-8B9D-B957A5C8FE39}.Debug|x64.ActiveCfg = Debug|x64
+		{A13C17B6-E893-4AFC-8B9D-B957A5C8FE39}.Debug|x64.Build.0 = Debug|x64
+		{A13C17B6-E893-4AFC-8B9D-B957A5C8FE39}.Debug|x86.ActiveCfg = Debug|Win32
+		{A13C17B6-E893-4AFC-8B9D-B957A5C8FE39}.Debug|x86.Build.0 = Debug|Win32
+		{A13C17B6-E893-4AFC-8B9D-B957A5C8FE39}.Release|x64.ActiveCfg = Release|x64
+		{A13C17B6-E893-4AFC-8B9D-B957A5C8FE39}.Release|x64.Build.0 = Release|x64
+		{A13C17B6-E893-4AFC-8B9D-B957A5C8FE39}.Release|x86.ActiveCfg = Release|Win32
+		{A13C17B6-E893-4AFC-8B9D-B957A5C8FE39}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
