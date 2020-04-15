@@ -49,7 +49,8 @@ int main()
 			{
 				items[i] = temp[i];
 			}
-			items[itemsCounter - 1].nextItemPointer = currentItemPointer;
+			items[itemsCounter - 1].nextItemPointer = currentItemPointer; //Asign the current pointer to the previous item property 'nextItemPointer'
+			//Implicitly the last item won't make this assignment, so it's a easy way to check if we hit the last item on a list when making loops.
 			items[itemsCounter] = item;
 			itemsCounter++;
 			delete[] temp;
@@ -58,7 +59,7 @@ int main()
 	float result = 0;
 	for (unsigned int i=0; i< itemsCounter; i++)
 	{
-		if (items[i].nextItemPointer != NULL)
+		if (items[i].nextItemPointer != NULL) //To avoid buffer overruns!!
 			result = items[i].Number + items[i + 1].Number;
 	}
 
