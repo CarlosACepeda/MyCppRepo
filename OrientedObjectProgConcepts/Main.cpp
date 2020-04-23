@@ -13,9 +13,5 @@ int main()
 	Inventory* inventory = new Inventory();
 	delete inventory;
 
-	//Homework 6:
-	//Use classes and OOP concepts and re-do the Homework 5 with Linked Lists.
-	//Instead of functions we should use methods, and instead of structs we use classes.
-
 	return 0;
 }

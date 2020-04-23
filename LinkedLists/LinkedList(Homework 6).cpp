@@ -2,26 +2,20 @@
 #include "LinkedList.h"
 using namespace std;
 
-//Homework 5.
-	//Use LinkedLists to allow th user to enter as many numbers as she wants
-	//and stop when the user enters 0.
-	//and return the average of those numbers and display them on the screen.
+//Homework 6:
+	//Use classes and OOP concepts and re-do the Homework 5 with Linked Lists.
+	//Instead of functions we should use methods, and instead of structs we use classes.
 
-struct ItemStruct
-{
-	ItemStruct* nextItemPointer;
-	int Number;
-};
 
-void LinkedListExerciseNoOOP()
+void Item::LinkedListExercise()
 {
-	ItemStruct* items = NULL; //Create an an instance of an array and return its pointer.
+	Item* items = NULL; //Create an an instance of an array and return its pointer.
 	unsigned int itemsCounter = 0;
 	while (true)
 	{
 		cout << "\nWelcome user insert a number or 0 to exit\n";
 
-		ItemStruct item;
+		Item item;
 
 		int selection = 0;
 		cin >> selection;
@@ -33,18 +27,18 @@ void LinkedListExerciseNoOOP()
 		//Let's create a new item.
 		item.Number = selection;
 		item.nextItemPointer = NULL;
-		ItemStruct* currentItemPointer = &item;
+		Item* currentItemPointer = &item;
 
 		if (items == NULL)
 		{
-			items = new ItemStruct[1];
+			items = new Item[1];
 			items[0] = item;
 			itemsCounter = 1;
 		}
 		else
 		{
-			ItemStruct* temp = items;
-			items = new ItemStruct[itemsCounter + 1];
+			Item* temp = items;
+			items = new Item[itemsCounter + 1];
 
 			for (unsigned int i = 0; i < itemsCounter; i++)
 			{
@@ -68,14 +62,4 @@ void LinkedListExerciseNoOOP()
 
 	cout << "The average of the numbers you entered is: " << result << endl;
 
-}
-
-int main()
-{
-	LinkedListExerciseNoOOP();
-	Item itemInstance;
-	cout << "\n Finishing 'No OOP' Linked List Exercise\n";
-	itemInstance.LinkedListExercise();
-	cout << "\n Finishing 'No OOP' Linked List Exercise\n";
-	return 0;
 }
