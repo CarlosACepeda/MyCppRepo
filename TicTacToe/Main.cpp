@@ -79,7 +79,7 @@ public:
 		}
 
 		Winner::E winningPlayer, currentPlayer = Winner::X;
-		while ((winningPlayer= _ruleEngine.GetWinningPlayer(_board))== Winner::None)
+		while ((winningPlayer= _ruleEngine.GetWinningPlayer(_board)) == Winner::None)
 		{
 			Render();
 			std::cout << std::endl;
@@ -135,7 +135,7 @@ private:
 			return "O wins\n";
 			break;
 		case Winner::Stalemate:
-			return "It's a tie\n";
+			return "It's a tie (Stalemate)\n";
 			break;
 		case Winner::None:
 			return "Nobody wins?? How did you do that\n";
@@ -160,7 +160,7 @@ public:
 //Works flawlessly! ;)
 class ClassicRuleEngine : public IRuleEngine
 {
-
+	
 public:
 	virtual Winner::E GetWinningPlayer(Board& board)
 	{
@@ -170,6 +170,7 @@ public:
 		if (linematches == false)
 		{
 			samePlayerCount = 1;
+			//std::cout << "Checking Horizontally\n";
 			for (auto i = 0; i < board.GetTotalSquares(); i++)
 			{
 				if (board.GetSquare(i) == BoardSquare::Empty)
@@ -188,6 +189,10 @@ public:
 							{
 								samePlayerCount = samePlayerCount + 1;
 							}
+							else
+							{
+								samePlayerCount = 1;
+							}
 							if (samePlayerCount == board.GetWidth())
 							{
 								linematches = true;
@@ -204,6 +209,7 @@ public:
 			{
 				//Still no match? check vertically.
 				samePlayerCount = 1; //reset.
+				//std::cout << "Checking Vertically\n";
 				for (auto i = 0; i < board.GetTotalSquares(); i++)
 				{
 					if (board.GetSquare(i) == BoardSquare::Empty) continue; //move to the next item.
@@ -211,6 +217,10 @@ public:
 					{
 						samePlayerCount = samePlayerCount + 1;
 						i += board.GetWidth() - 1;
+					}
+					else
+					{
+						samePlayerCount = 1;
 					}
 					if (samePlayerCount == board.GetWidth())
 					{
@@ -226,6 +236,7 @@ public:
 				//If still does not matchhhhhh then let's prove now in diagonal fashion
 				//there are two diagonals
 				samePlayerCount = 1; //reset again.
+				//std::cout << "Checking Top Left\n";
 				//from Top Left:
 				for (auto i = 0; i < board.GetTotalSquares(); i++)
 				{
@@ -236,6 +247,10 @@ public:
 						samePlayerCount = samePlayerCount + 1;
 						i += board.GetWidth();
 					}
+					else
+					{
+						samePlayerCount = 1;
+					}
 					if (samePlayerCount == board.GetWidth())
 					{
 						linematches = true;
@@ -245,6 +260,7 @@ public:
 				}
 				samePlayerCount = 1; //reset again.
 				//from Top Right:
+				//std::cout << "Checking Top Right\n";
 				for (auto i = (board.GetWidth()-1); i < board.GetTotalSquares(); i++)
 				{
 					if (board.GetSquare(i) == BoardSquare::Empty) break; //if the top right is empty then don't check for anything.
@@ -252,6 +268,10 @@ public:
 					{
 						samePlayerCount = samePlayerCount + 1;
 						i += board.GetWidth() - 2;
+					}
+					else
+					{
+						samePlayerCount = 1;
 					}
 					if (samePlayerCount == board.GetWidth())
 					{
@@ -268,7 +288,29 @@ public:
 		}
 		else
 		{
-			return Winner::None;
+			//Check for a Stalemate.
+			bool atLeastOneSquareEmpty = false;
+			for (auto i = 0; i < board.GetTotalSquares(); i++)
+			{
+				if (board.GetSquare(i) == BoardSquare::Empty)
+				{
+					atLeastOneSquareEmpty = true;
+					break;
+				}
+				else
+				{
+					atLeastOneSquareEmpty = false;
+				}
+				
+			}
+			if (atLeastOneSquareEmpty == true)
+			{
+				return Winner::None;
+			}
+			else
+			{
+				return Winner::Stalemate;
+			}
 		}
 		
 	}
