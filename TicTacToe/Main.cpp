@@ -97,6 +97,7 @@ public:
 			currentPlayer = currentPlayer == Winner::X ? Winner::O : Winner::X;
 		}
 		std::cout << GetWinnerText(winningPlayer);
+		Render(); //After winning, show the board to see the results.
 		return winningPlayer;
 	}
 private:
@@ -138,7 +139,7 @@ private:
 			return "It's a tie (Stalemate)\n";
 			break;
 		case Winner::None:
-			return "Nobody wins?? How did you do that\n";
+			return "Nobody wins?? How did you do that?\n";
 			break;
 		default:
 			return "???\n";
@@ -177,11 +178,11 @@ public:
 				continue; //move to the next item.
 
 				   //Horizontal check.
-				if (i == 0) continue; //greater than or equals because the next line will make a check with the next item.
-				if ((i + 1) % board.GetWidth() == 0) //The only one that equals 0 is 0 and the Width of the board,
-						//this way we know we are int the last item horizontally if this is true.
+				if (i == 0) continue;
+				if ((i + 1) % board.GetWidth() == 0) //The only one that equals '0', is 0 itself and the Width of the board,
+						//in this way we know we are in the last item horizontally if this is true.
 					{
-						for (int reverseindex = i; reverseindex > (i - 2); reverseindex--) //now lets read from the last to the first horizontally.
+						for (int reverseindex = i; reverseindex > (i - 2); reverseindex--) //now let's read from the last item to the first horizontally.
 						{
 							if ((reverseindex - 1) < 0) continue;
 
@@ -202,7 +203,7 @@ public:
 						}
 					}
 				
-				if (linematches) break; //Exit of the main loop because I already found a Winner!
+				if (linematches) break; //Exit of the loop because I already found a Winner!
 			}
 		}
 		if (linematches == false)
@@ -237,10 +238,10 @@ public:
 				//there are two diagonals
 				samePlayerCount = 1; //reset again.
 				//std::cout << "Checking Top Left\n";
-				//from Top Left:
+				//from Top Left to Bottom Right.:
 				for (auto i = 0; i < board.GetTotalSquares(); i++)
 				{
-					if (board.GetSquare(0) == BoardSquare::Empty) break; //if the top left is empty then don't check for anything.
+					if (board.GetSquare(0) == BoardSquare::Empty) break; //if the Top Left square is empty then don't check for anything.
 					//first diagonal (starting from top left)
 					if (board.GetSquare(i) == board.GetSquare(i + board.GetWidth() + 1))
 					{
@@ -259,11 +260,11 @@ public:
 					}
 				}
 				samePlayerCount = 1; //reset again.
-				//from Top Right:
+				//from Top Right to Bottom Left:
 				//std::cout << "Checking Top Right\n";
 				for (auto i = (board.GetWidth()-1); i < board.GetTotalSquares(); i++)
 				{
-					if (board.GetSquare(i) == BoardSquare::Empty) break; //if the top right is empty then don't check for anything.
+					if (board.GetSquare(i) == BoardSquare::Empty) break; //if the top right square is empty then don't check for anything.
 					if (board.GetSquare(i) == board.GetSquare(i + board.GetWidth() - 1))
 					{
 						samePlayerCount = samePlayerCount + 1;
