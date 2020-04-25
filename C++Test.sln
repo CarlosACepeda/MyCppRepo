@@ -21,6 +21,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ReferencesAndInitializers",
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TicTacToe", "TicTacToe\TicTacToe.vcxproj", "{5F894BFC-D873-41C4-86AE-5B359DBAD965}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DefaultArguments", "DefaultArguments\DefaultArguments.vcxproj", "{380EA4F0-E89C-426B-8E8E-4812B6D66AEE}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ShootingGame", "ShootingGame\ShootingGame.vcxproj", "{0F2D5A87-05C6-48F3-9267-1D7C21D50CE0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -121,6 +125,26 @@ Global
 		{5F894BFC-D873-41C4-86AE-5B359DBAD965}.Release|x64.Build.0 = Release|x64
 		{5F894BFC-D873-41C4-86AE-5B359DBAD965}.Release|x86.ActiveCfg = Release|Win32
 		{5F894BFC-D873-41C4-86AE-5B359DBAD965}.Release|x86.Build.0 = Release|Win32
+		{380EA4F0-E89C-426B-8E8E-4812B6D66AEE}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{380EA4F0-E89C-426B-8E8E-4812B6D66AEE}.Debug|x64.ActiveCfg = Debug|x64
+		{380EA4F0-E89C-426B-8E8E-4812B6D66AEE}.Debug|x64.Build.0 = Debug|x64
+		{380EA4F0-E89C-426B-8E8E-4812B6D66AEE}.Debug|x86.ActiveCfg = Debug|Win32
+		{380EA4F0-E89C-426B-8E8E-4812B6D66AEE}.Debug|x86.Build.0 = Debug|Win32
+		{380EA4F0-E89C-426B-8E8E-4812B6D66AEE}.Release|Any CPU.ActiveCfg = Release|Win32
+		{380EA4F0-E89C-426B-8E8E-4812B6D66AEE}.Release|x64.ActiveCfg = Release|x64
+		{380EA4F0-E89C-426B-8E8E-4812B6D66AEE}.Release|x64.Build.0 = Release|x64
+		{380EA4F0-E89C-426B-8E8E-4812B6D66AEE}.Release|x86.ActiveCfg = Release|Win32
+		{380EA4F0-E89C-426B-8E8E-4812B6D66AEE}.Release|x86.Build.0 = Release|Win32
+		{0F2D5A87-05C6-48F3-9267-1D7C21D50CE0}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{0F2D5A87-05C6-48F3-9267-1D7C21D50CE0}.Debug|x64.ActiveCfg = Debug|x64
+		{0F2D5A87-05C6-48F3-9267-1D7C21D50CE0}.Debug|x64.Build.0 = Debug|x64
+		{0F2D5A87-05C6-48F3-9267-1D7C21D50CE0}.Debug|x86.ActiveCfg = Debug|Win32
+		{0F2D5A87-05C6-48F3-9267-1D7C21D50CE0}.Debug|x86.Build.0 = Debug|Win32
+		{0F2D5A87-05C6-48F3-9267-1D7C21D50CE0}.Release|Any CPU.ActiveCfg = Release|Win32
+		{0F2D5A87-05C6-48F3-9267-1D7C21D50CE0}.Release|x64.ActiveCfg = Release|x64
+		{0F2D5A87-05C6-48F3-9267-1D7C21D50CE0}.Release|x64.Build.0 = Release|x64
+		{0F2D5A87-05C6-48F3-9267-1D7C21D50CE0}.Release|x86.ActiveCfg = Release|Win32
+		{0F2D5A87-05C6-48F3-9267-1D7C21D50CE0}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
