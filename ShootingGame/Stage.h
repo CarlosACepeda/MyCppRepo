@@ -27,6 +27,7 @@ public:
 
 private:
 	int GetIndexForXY(int x, int y);
+	void SetCharacter(char ch, int x, int y);
 };
 
 #endif // !STAGE_H
