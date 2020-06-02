@@ -9,6 +9,7 @@ public:
 	virtual Position& GetPosition() = 0;
 	virtual void SetPosition(Position& position) = 0;
 	virtual void Collide(IEntity& entity) = 0;
+	virtual void Update()=0;
 };
 
 #endif // !IENTITY_H

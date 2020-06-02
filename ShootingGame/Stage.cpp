@@ -34,14 +34,14 @@ void Stage::SetEntity(IEntity& entity, Position pos)
 	_entities.push_back(&entity);
 	entity.SetPosition(pos);
 }
-void Stage::MoveEntity(IEntity& entity, Position pos)
+bool Stage::MoveEntity(IEntity& entity, Position pos)
 {
 	if (pos.GetX() <0 || pos.GetX() >= _width || pos.GetY() <0 || pos.GetY() >=_height) 
-		return;
+		return false;
 	
 	auto tileToEnter= _tiles[GetIndexForXY(pos.GetX(), pos.GetY())];
 	if(!tileToEnter-> CanEnter(entity))
-		return;
+		return false;
 	
 	auto oldPos= entity.GetPosition();	
 
@@ -49,6 +49,7 @@ void Stage::MoveEntity(IEntity& entity, Position pos)
 	SetCharacter(oldTile->GetCharacter(), oldPos.GetX(), oldPos.GetY());
 	SetCharacter(entity.GetCharacter(), pos.GetX(), pos.GetY());
 	entity.SetPosition(pos);
+	return true;
 }
 
 void Stage::RenderAll()
@@ -68,6 +69,13 @@ void Stage::RenderAll()
 		auto pos = entity->GetPosition();
 		SetCharacter(entity->GetCharacter(), pos.GetX(), pos.GetY());
 
+	}
+}
+void Stage::Update()
+{
+	for (auto i = _entities.begin(); i != _entities.end(); i++)
+	{
+		(*i)->Update();
 	}
 }
 void Stage::SetCharacter(char ch, int x, int y) 

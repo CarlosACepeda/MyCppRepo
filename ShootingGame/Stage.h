@@ -21,7 +21,8 @@ public:
 	void SetTile(ITile& tile, Position pos);
 	void SetTiles(ITile& tile, Position from, Position to);
 	void SetEntity(IEntity& entity, Position pos);
-	void MoveEntity(IEntity& entity, Position pos);
+	bool MoveEntity(IEntity& entity, Position pos);
+	void Update();
 
 	void RenderAll();
 
