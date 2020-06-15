@@ -8,7 +8,7 @@
 
 class Stage
 {
-	int _width, _height;
+	const int _width, _height;
 	std::vector<ITile*> _tiles;
 	std::vector<IEntity*> _entities;
 
