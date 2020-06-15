@@ -7,11 +7,11 @@ Stage::Stage(int width, int height) : _width(width), _height(height), _tiles(wid
 {
 
 }
-int Stage::GetWidth()
+int Stage::GetWidth() const
 {
 	return _width;
 }
-int Stage::GetHeight()
+int Stage::GetHeight() const
 {
 	return _height;
 }
@@ -86,7 +86,7 @@ void Stage::SetCharacter(char ch, int x, int y)
 	cout << ch;
 
 }
-int Stage::GetIndexForXY(int x, int y)
+int Stage::GetIndexForXY(int x, int y) const
 {
 	return _width * x + y;
 }

@@ -16,8 +16,8 @@ class Stage
 
 public:
 	Stage(int width, int height);
-	int GetWidth();
-	int GetHeight();
+	int GetWidth() const;
+	int GetHeight() const;
 	void SetTile(ITile& tile, Position pos);
 	void SetTiles(ITile& tile, Position from, Position to);
 	void SetEntity(IEntity& entity, Position pos);
@@ -27,7 +27,7 @@ public:
 	void RenderAll();
 
 private:
-	int GetIndexForXY(int x, int y);
+	int GetIndexForXY(int x, int y) const;
 	void SetCharacter(char ch, int x, int y);
 };
 

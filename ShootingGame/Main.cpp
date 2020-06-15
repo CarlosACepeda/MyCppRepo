@@ -16,7 +16,7 @@ public:
 	{
 	}
 
-	virtual char GetCharacter() { return _character; }
+	virtual char GetCharacter() const { return _character; }
 	virtual bool CanEnter(IEntity& entity) { return _canEnter; }
 	virtual void Enter(IEntity& entity) {}
 
@@ -31,9 +31,10 @@ public:
 	{
 
 	}
-	virtual char GetCharacter() { return _character; }
-	virtual Position& GetPosition() { return _position; }
-	virtual void SetPosition(Position& position) { _position = position; }
+	 
+	virtual char GetCharacter() const { return _character; }
+	virtual const Position& GetPosition() const { return _position; }
+	virtual void SetPosition(const Position& position) { _position = position; }
 	virtual void Collide(IEntity& entity) {}
 	virtual void Update(){}
 };
