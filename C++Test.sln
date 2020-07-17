@@ -25,6 +25,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DefaultArguments", "Default
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ShootingGame", "ShootingGame\ShootingGame.vcxproj", "{0F2D5A87-05C6-48F3-9267-1D7C21D50CE0}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OperatorOverloading", "OperatorOverloading\OperatorOverloading.vcxproj", "{34BA0E8D-B3C5-4DCE-B755-A633009EEFFC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -145,6 +147,16 @@ Global
 		{0F2D5A87-05C6-48F3-9267-1D7C21D50CE0}.Release|x64.Build.0 = Release|x64
 		{0F2D5A87-05C6-48F3-9267-1D7C21D50CE0}.Release|x86.ActiveCfg = Release|Win32
 		{0F2D5A87-05C6-48F3-9267-1D7C21D50CE0}.Release|x86.Build.0 = Release|Win32
+		{34BA0E8D-B3C5-4DCE-B755-A633009EEFFC}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{34BA0E8D-B3C5-4DCE-B755-A633009EEFFC}.Debug|x64.ActiveCfg = Debug|x64
+		{34BA0E8D-B3C5-4DCE-B755-A633009EEFFC}.Debug|x64.Build.0 = Debug|x64
+		{34BA0E8D-B3C5-4DCE-B755-A633009EEFFC}.Debug|x86.ActiveCfg = Debug|Win32
+		{34BA0E8D-B3C5-4DCE-B755-A633009EEFFC}.Debug|x86.Build.0 = Debug|Win32
+		{34BA0E8D-B3C5-4DCE-B755-A633009EEFFC}.Release|Any CPU.ActiveCfg = Release|Win32
+		{34BA0E8D-B3C5-4DCE-B755-A633009EEFFC}.Release|x64.ActiveCfg = Release|x64
+		{34BA0E8D-B3C5-4DCE-B755-A633009EEFFC}.Release|x64.Build.0 = Release|x64
+		{34BA0E8D-B3C5-4DCE-B755-A633009EEFFC}.Release|x86.ActiveCfg = Release|Win32
+		{34BA0E8D-B3C5-4DCE-B755-A633009EEFFC}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
