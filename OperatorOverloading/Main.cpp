@@ -6,7 +6,8 @@ using namespace std;
 
 class Vector2
 {
-	float _x, _y;
+	float _x;
+	float _y;
 
 public:
 	Vector2(float x, float y) : _x(x), _y(y)
