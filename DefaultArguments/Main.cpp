@@ -26,7 +26,8 @@ int main()
 	ClassA whoa(20);
 
 	cout << "before you get int \n";
-	auto age = GetInt(whoa, "hey");
+	//auto age = GetInt(whoa, "hey"); //Provided Argument
+	auto age = GetInt(); //Default Argument
 	cout << "You are " << age << " years old!";
 
 	return 0;
